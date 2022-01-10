@@ -2,6 +2,7 @@ import { createApp } from "vue";
 
 import App from "./App.vue";
 import router from "./router.js";
+import "@/assets/styles/tailwind.css";
 
 import TheHeader from "@/components/ui/TheHeader.vue";
 import TheFooter from "@/components/ui/TheFooter.vue";
