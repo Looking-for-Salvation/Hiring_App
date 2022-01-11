@@ -1,0 +1,99 @@
+/** IRANSans */
+@font-face {
+	font-family: "IRANSans";
+	src: url("./IranSans/IRANSans-UltraLight.woff2") format("woff2");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans";
+	src: url("./IranSans/IRANSans-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans";
+	src: url("./IranSans/IRANSans-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans";
+	src: url("./IranSans/IRANSans-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+/** IRANSans Farsi Digits */
+@font-face {
+	font-family: "IRANSans(FaNum)";
+	src: url("./IranSans/IRANSansFaNum-UltraLight.woff2") format("woff2");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans(FaNum)";
+	src: url("./IranSans/IRANSansFaNum-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans(FaNum)";
+	src: url("./IranSans/IRANSansFaNum.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans(FaNum)";
+	src: url("./IranSans/IRANSansFaNum-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANSans(FaNum)";
+	src: url("./IranSans/IRANSansFaNum-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+/** IranYekan */
+
+@font-face {
+	font-family: "IRANYekanWeb(FaNum)";
+	src: url("./IranYekan/IRANYekanWebFaNum-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANYekanWeb(FaNum)";
+	src: url("./IranYekan/IRANYekanWebFaNum.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IRANYekanWeb(FaNum)";
+	src: url("./IranYekan/IRANYekanWebFaNum-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}

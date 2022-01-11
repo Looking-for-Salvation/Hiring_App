@@ -1,0 +1,16 @@
+@import url("fonts/fonts.css");
+
+body {
+	font-family: IRANYekanWeb;
+	background-color: #f7f8fc;
+}
+
+.page {
+	background-color: #f7f8fc;
+}
+
+.section,
+section {
+	padding: 40px 30px;
+	position: relative;
+}
