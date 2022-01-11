@@ -1,13 +1,13 @@
 <template>
-	<div class="fixed inset-0">
+	<div class="">
 		<div class="absolute inset-0 flex items-center justify-center m-auto" :style="inlineStyles">
 			<div class="relative flex flex-col w-full px-6 m-4 overflow-auto bg-white shadow-md md:m-0 md:mx-auto rounded-2xl py-9" :style="inlineStyles">
 				<section class="h-full p-0 lg:px-4">
 					<div class="flex flex-col justify-between h-full px-4">
 						<slot></slot>
 						<div class="relative text-center">
-							<div class="mt-10 lg:grid lg:grid-cols-3 lg:gap-6">
-								<div class="mt-6 ml-auto lg:flex lg:justify-end lg:mt-0">
+							<div class="flex items-center justify-center mt-10 lg:grid lg:grid-cols-3 lg:gap-6">
+								<div class="ml-auto lg:flex lg:justify-end lg:mt-0">
 									<button
 										v-if="nextButtonVisibility"
 										@click="nextSlide"
@@ -43,7 +43,7 @@
 										<span class="md:mr-3">ارسال</span>
 									</button>
 								</div>
-								<div class="my-auto text-lg text-center">{{ `${currentSlideId} از ${slidesCount}` }}</div>
+								<div class="hidden my-auto text-lg text-center lg:block">{{ `${currentSlideId} از ${slidesCount}` }}</div>
 								<div class="mr-auto lg:flex lg:w-38">
 									<button
 										v-if="prevButtonVisibility"

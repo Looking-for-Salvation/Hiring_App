@@ -18,27 +18,15 @@ export default {
 	},
 	setup() {
 		const store = useStore();
-		console.log(store);
 		const currentSlideId = computed(() => store.getters["slides/currentSlideId"]);
-		console.log(currentSlideId);
+
 		const currentSlide = computed(() => {
 			if (currentSlideId.value === 1) return "intro-slide";
 			if (currentSlideId.value === 2) return "info-slide";
 			if (currentSlideId.value === 3) return "first-slide";
 		});
 
-		const nextSlide = () => {
-			if (currentSlideId.value >= 1) store.dispatch("slides/nextSlide");
-			if (currentSlideId.value >= 10) currentSlideId.value = 10;
-		};
-
-		const prevSlide = () => {
-			// if (currentSlideId.value <= 1) currentSlideId.value = 1;
-			// if (currentSlideId.value > 1) currentSlideId--;
-			currentSlideId--;
-		};
-
-		return { currentSlide, currentSlideId, nextSlide, prevSlide };
+		return { currentSlide };
 	},
 };
 </script>
