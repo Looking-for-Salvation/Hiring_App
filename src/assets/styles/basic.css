@@ -1,4 +1,6 @@
-@import url("fonts/fonts.css");
+:root {
+	background-color: #f7f8fc;
+}
 
 body {
 	font-family: IRANYekanWeb;

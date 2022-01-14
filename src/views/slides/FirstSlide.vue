@@ -4,19 +4,9 @@
 			<div class="flex items-center h-full md:px-10">
 				<div class="container w-full mx-auto">
 					<div class="max-w-xl mx-auto">
-						<h1 class="mb-12 text-3xl font-light tracking-tight text-center text-black">ّاسلاید اول</h1>
-						<p class="text-lg font-light tracking-tight text-black">
-							لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-							سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-						</p>
-						<p class="text-lg font-light tracking-tight text-black">
-							لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-							سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-						</p>
-						<p class="text-lg font-light tracking-tight text-black">
-							لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
-							سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
-						</p>
+						<h1 class="mb-12 text-3xl font-light tracking-tight text-center text-black">سوال اول</h1>
+						<h3 class="mb-8 text-xl">موفقیت را چگونه توصیف می کنید؟</h3>
+						<textarea name="textarea" id="textarea" class="textarea textarea-primary" cols="100" rows="5"></textarea>
 					</div>
 				</div>
 			</div>

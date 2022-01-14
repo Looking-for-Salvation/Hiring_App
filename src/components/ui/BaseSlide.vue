@@ -83,7 +83,7 @@ export default {
 		inlineStyles: {
 			type: String,
 			required: false,
-			default: "height: 700px; max-width: 1200px;",
+			default: "height: 600px; max-width: 1000px;",
 		},
 	},
 	setup() {

@@ -7,5 +7,6 @@ export default defineConfig({
 	plugins: [vue()],
 	resolve: {
 		alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+		mainFields: ["browser", "module", "main", "jsnext:main", "jsnext"],
 	},
 });
