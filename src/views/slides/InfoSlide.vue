@@ -5,7 +5,7 @@
 				<div class="container w-full mx-auto">
 					<div class="max-w-xl mx-auto">
 						<h1 class="mb-12 text-xl font-light tracking-tight text-center text-black sm:text-3xl">اطلاعات خود را وارد کنید</h1>
-						<form class="form-control">
+						<form @submit.prevent="submitForm" class="form-control">
 							<div class="flex flex-col items-center mb-4 sm:flex-row">
 								<input v-model="formData.firstName" type="text" placeholder="نام" class="w-full mb-4 sm:mb-0 sm:ml-4 input input-bordered" />
 								<input v-model="formData.lastName" type="text" placeholder="نام خانوادگی" class="w-full input input-bordered" />
@@ -64,7 +64,27 @@ export default {
 
 		const logToC = () => console.log(formData);
 
-		return { formData, logToC };
+		const submitForm = () => {
+			fetch("http://127.0.0.1:8000/api/register", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					firstName: formData.firstName,
+					lastName: formData.lastName,
+					email: formData.email,
+					phoneNumber: formData.phone,
+					grade: formData.grade,
+					fieldOfStudy: formData.field,
+					address: formData.address,
+				}),
+			})
+				.then((response) => console.log(response))
+				.catch((error) => console.log(error));
+		};
+
+		return { formData, logToC, submitForm };
 	},
 };
 </script>
