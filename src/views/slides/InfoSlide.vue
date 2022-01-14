@@ -54,7 +54,7 @@ export default {
 		const formData = reactive({
 			firstName: "",
 			lastName: "",
-			phone: 0,
+			phone: null,
 			email: "",
 			grade: "",
 			field: "",
