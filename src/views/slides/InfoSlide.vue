@@ -96,13 +96,14 @@ export default {
 					grade: formData.grade,
 					field_of_study: formData.field,
 					phone_number: formData.phone,
-					phone_number_alternative: formData.phone,
+					phone_number_backup: formData.phone,
 					email: formData.email,
 					password: "password",
 					password_confirmation: "password",
+					address: formData.address,
 				})
 				.then((response) => console.log(response))
-				.catch((error) => console.log(error));
+				.catch((error) => console.log(error.response.data.errors));
 		};
 
 		return { formData, logToC, submitForm };
