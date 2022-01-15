@@ -10,8 +10,9 @@
 								<div class="ml-auto lg:flex lg:justify-end lg:mt-0">
 									<button
 										v-if="nextButtonVisibility"
+										:disabled="!nextSlideAvailable"
 										@click="nextSlide"
-										class="inline-flex items-center text-black transition duration-200 hover:text-blue-400"
+										class="inline-flex items-center text-black transition duration-200 disabled:text-gray-300 hover:text-blue-400"
 									>
 										<span class="hidden p-2 bg-gray-100 md:inline-block rounded-xl">
 											<svg viewBox="0 0 20 20" class="w-6" data-v-2836fdb5-s="">
@@ -90,6 +91,8 @@ export default {
 		const store = useStore();
 		const currentSlideId = computed(() => store.getters["slides/currentSlideId"]);
 		const slidesCount = computed(() => store.getters["slides/slidesCount"]);
+		const nextSlideAvailable = computed(() => store.getters["slides/nextSlideAvailability"]);
+		console.log(nextSlideAvailable);
 
 		const nextSlide = () => {
 			if (currentSlideId.value >= 1) store.dispatch("slides/nextSlide");
@@ -114,7 +117,16 @@ export default {
 			else return false;
 		});
 
-		return { currentSlideId, slidesCount, nextSlide, prevSlide, nextButtonVisibility, prevButtonVisibility, submitButtonVisibility };
+		return {
+			currentSlideId,
+			slidesCount,
+			nextSlide,
+			prevSlide,
+			nextButtonVisibility,
+			prevButtonVisibility,
+			submitButtonVisibility,
+			nextSlideAvailable,
+		};
 	},
 };
 </script>

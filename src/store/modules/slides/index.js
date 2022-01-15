@@ -4,6 +4,7 @@ export default {
 		return {
 			currentSlideId: 1,
 			slidesCount: 3,
+			nextSlideAvailability: true,
 		};
 	},
 	mutations: {
@@ -13,6 +14,12 @@ export default {
 		prevSlide(state) {
 			state.currentSlideId--;
 		},
+		nextSlideAvailable(state) {
+			state.nextSlideAvailability = true;
+		},
+		nextSlideUnavailable(state) {
+			state.nextSlideAvailability = false;
+		},
 	},
 	getters: {
 		currentSlideId(state) {
@@ -21,6 +28,9 @@ export default {
 		slidesCount(state) {
 			return state.slidesCount;
 		},
+		nextSlideAvailability(state) {
+			return state.nextSlideAvailability;
+		},
 	},
 	actions: {
 		nextSlide({ commit }) {
@@ -28,6 +38,12 @@ export default {
 		},
 		prevSlide({ commit }) {
 			commit("prevSlide");
+		},
+		nextSlideAvailable({ commit }) {
+			commit("nextSlideAvailable");
+		},
+		nextSlideUnavailable({ commit }) {
+			commit("nextSlideUnavailable");
 		},
 	},
 };
