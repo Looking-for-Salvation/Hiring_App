@@ -70,13 +70,16 @@ export default {
 		// 			"Content-Type": "application/json",
 		// 		},
 		// 		body: JSON.stringify({
-		// 			firstName: formData.firstName,
-		// 			lastName: formData.lastName,
-		// 			email: formData.email,
-		// 			phoneNumber: formData.phone,
+		// 			first_name: formData.firstName,
+		// 			last_name: formData.lastName,
 		// 			grade: formData.grade,
-		// 			fieldOfStudy: formData.field,
+		// 			field_of_study: formData.field,
+		// 			phone_number: formData.phone,
+		// 			phone_number_backup: formData.phone,
+		// 			email: formData.email,
 		// 			address: formData.address,
+		// 			password: "password",
+		// 			password_confirmation: "password",
 		// 		}),
 		// 	})
 		// 		.then((response) => console.log(response))
@@ -96,9 +99,9 @@ export default {
 					phone_number: formData.phone,
 					phone_number_backup: formData.phone,
 					email: formData.email,
+					address: formData.address,
 					password: "password",
 					password_confirmation: "password",
-					address: formData.address,
 				})
 				.then((response) => console.log(response))
 				.catch((error) => console.log(error.response.data.errors));
