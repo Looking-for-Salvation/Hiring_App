@@ -43,6 +43,7 @@
 <script>
 import { onMounted, reactive } from "vue";
 import { useStore } from "vuex";
+import axios from "axios";
 
 export default {
 	setup() {
@@ -64,27 +65,44 @@ export default {
 
 		const logToC = () => console.log(formData);
 
+		// const submitForm = () => {
+		// 	fetch("http://127.0.0.1:8000/api/register", {
+		// 		method: "POST",
+		// 		headers: {
+		// 			"Content-Type": "application/json",
+		// 		},
+		// 		body: JSON.stringify({
+		// 			firstName: formData.firstName,
+		// 			lastName: formData.lastName,
+		// 			email: formData.email,
+		// 			phoneNumber: formData.phone,
+		// 			grade: formData.grade,
+		// 			fieldOfStudy: formData.field,
+		// 			address: formData.address,
+		// 		}),
+		// 	})
+		// 		.then((response) => console.log(response))
+		// 		.catch((error) => {
+		// 			console.log(error);
+		// 			console.log(error.message);
+		// 		});
+		// };
+
 		const submitForm = () => {
-			fetch("http://127.0.0.1:8000/api/register", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					firstName: formData.firstName,
-					lastName: formData.lastName,
-					email: formData.email,
-					phoneNumber: formData.phone,
+			axios
+				.post("http://127.0.0.1:8000/api/register", {
+					first_name: formData.firstName,
+					last_name: formData.lastName,
 					grade: formData.grade,
-					fieldOfStudy: formData.field,
-					address: formData.address,
-				}),
-			})
+					field_of_study: formData.field,
+					phone_number: formData.phone,
+					phone_number_alternative: formData.phone,
+					email: formData.email,
+					password: "password",
+					password_confirmation: "password",
+				})
 				.then((response) => console.log(response))
-				.catch((error) => {
-					console.log(error);
-					console.log(error.message);
-				});
+				.catch((error) => console.log(error));
 		};
 
 		return { formData, logToC, submitForm };
