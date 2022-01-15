@@ -92,7 +92,6 @@ export default {
 		const currentSlideId = computed(() => store.getters["slides/currentSlideId"]);
 		const slidesCount = computed(() => store.getters["slides/slidesCount"]);
 		const nextSlideAvailable = computed(() => store.getters["slides/nextSlideAvailability"]);
-		console.log(nextSlideAvailable);
 
 		const nextSlide = () => {
 			if (currentSlideId.value >= 1) store.dispatch("slides/nextSlide");

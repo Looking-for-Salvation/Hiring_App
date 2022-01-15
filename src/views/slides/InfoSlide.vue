@@ -27,8 +27,8 @@
 									<option value="karshenasi">کارشناسی</option>
 								</select>
 								<input v-model="formData.field" type="text" placeholder="رشته تحصیلی" class="mb-4 input-bordered sm:flex-1 sm:mb-0 sm:mx-4 input" />
-								<input type="date" placeholder="تاریخ تولد" class="sm:flex-1 sm:mr-auto input input-bordered date-picker" />
-								<date-picker v-model="formData.birthDate" custom-input=".date-picker"></date-picker>
+								<input type="text" placeholder="تاریخ تولد" class="sm:flex-1 sm:mr-auto input input-bordered date-picker" />
+								<date-picker format="jYYYY-jMM-jDD" v-model="formData.birthDate" custom-input=".date-picker"></date-picker>
 							</div>
 							<textarea v-model="formData.address" class="w-full mb-8 textarea textarea-bordered min-h-[100px]" placeholder="آدرس"></textarea>
 							<button class="w-1/2 max-w-xs mx-auto btn-outline btn">ثبت</button>
@@ -62,8 +62,6 @@ export default {
 			birthDate: "",
 			address: "",
 		});
-
-		const logToC = () => console.log(formData);
 
 		// const submitForm = () => {
 		// 	fetch("http://127.0.0.1:8000/api/register", {
@@ -105,7 +103,7 @@ export default {
 				.catch((error) => console.log(error));
 		};
 
-		return { formData, logToC, submitForm };
+		return { formData, submitForm };
 	},
 };
 </script>
