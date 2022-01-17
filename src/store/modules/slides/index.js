@@ -3,8 +3,8 @@ export default {
 	state() {
 		return {
 			currentSlideId: 1,
-			slidesCount: 3,
-			nextSlideAvailability: true,
+			slidesCount: 99,
+			nextSlideAvailability: false,
 		};
 	},
 	mutations: {

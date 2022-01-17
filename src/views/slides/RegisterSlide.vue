@@ -50,7 +50,7 @@
 							<div class="ml-auto lg:flex lg:justify-end lg:mt-0">
 								<button
 									v-if="nextButtonVisibility"
-									:disabled="!nextSlideAvailable"
+									:disabled="nextSlideAvailable"
 									@click="nextSlide"
 									class="inline-flex items-center text-black transition duration-200 disabled:text-gray-300 hover:text-blue-400"
 								>
@@ -84,7 +84,7 @@
 									<span class="md:mr-3">ارسال</span>
 								</button>
 							</div>
-							<div class="hidden my-auto text-lg text-center lg:block">{{ `${currentSlideId} از ${slidesCount}` }}</div>
+							<div></div>
 							<div class="mr-auto lg:flex lg:w-38">
 								<button
 									v-if="prevButtonVisibility"
