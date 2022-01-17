@@ -13,7 +13,7 @@
 							<div class="flex flex-col items-center mb-4 sm:flex-row">
 								<input
 									v-model="formData.phone"
-									type="number"
+									type="tel"
 									placeholder="شماره تلفن"
 									class="w-full mb-4 sm:mb-0 sm:ml-4 form-control input input-bordered"
 								/>
@@ -103,8 +103,17 @@ export default {
 					password: "password",
 					password_confirmation: "password",
 				})
-				.then((response) => console.log(response))
-				.catch((error) => console.log(error.response.data.errors));
+				.then((response) => {
+					if (response.statusText === "ok") {
+						store.dispatch("slides/nextSlideAvailable");
+					} else {
+						throw new Error("Something went wrong!");
+					}
+				})
+				.catch((error) => {
+					console.log(error);
+					console.log(error.response.data.errors);
+				});
 		};
 
 		return { formData, submitForm };
