@@ -1,32 +1,30 @@
 <template>
-	<component :is="currentSlide"></component>
+	<div>
+		<welcome-slide v-if="currentSlideId === 1"></welcome-slide>
+		<register-slide v-if="currentSlideId === 2"></register-slide>
+		<base-slide v-for="question in questions" :key="question.id" :question="question"></base-slide>
+	</div>
 </template>
 
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
 
-import IntroSlide from "@/views/slides/IntroSlide.vue";
-import InfoSlide from "@/views/slides/InfoSlide.vue";
-import FirstSlide from "@/views/slides/FirstSlide.vue";
+import WelcomeSlide from "@/views/slides/WelcomeSlide.vue";
+import RegisterSlide from "@/views/slides/RegisterSlide.vue";
 
 export default {
 	components: {
-		IntroSlide,
-		InfoSlide,
-		FirstSlide,
+		WelcomeSlide,
+		RegisterSlide,
 	},
 	setup() {
 		const store = useStore();
 		const currentSlideId = computed(() => store.getters["slides/currentSlideId"]);
 
-		const currentSlide = computed(() => {
-			if (currentSlideId.value === 1) return "intro-slide";
-			if (currentSlideId.value === 2) return "info-slide";
-			if (currentSlideId.value === 3) return "first-slide";
-		});
+		const questions = computed(() => store.getters["questions/questions"]);
 
-		return { currentSlide };
+		return { currentSlideId, questions };
 	},
 };
 </script>

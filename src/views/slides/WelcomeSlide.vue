@@ -1,9 +1,21 @@
 <template>
-	<div v-if="currentSlideId === question.id + 2" class="absolute inset-0 flex items-center justify-center m-auto" :style="inlineStyles">
+	<div class="absolute inset-0 flex items-center justify-center m-auto" :style="inlineStyles">
 		<div class="relative flex flex-col w-full px-6 m-4 overflow-auto bg-white shadow-md md:m-0 md:mx-auto rounded-2xl py-9" :style="inlineStyles">
 			<section class="h-full p-0 lg:px-4">
 				<div class="flex flex-col justify-between h-full px-4">
-					<base-question :questionData="question"></base-question>
+					<div class="flex-1 w-full md:px-10">
+						<div class="flex items-center h-full md:px-10">
+							<div class="container w-full mx-auto">
+								<div class="max-w-xl mx-auto">
+									<h1 class="mb-12 text-3xl font-light tracking-tight text-center text-black">خوش آمدید</h1>
+									<p class="text-lg font-light tracking-tight text-black">
+										لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
+										ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="relative text-center">
 						<div class="flex items-center justify-center mt-10 lg:grid lg:grid-cols-3 lg:gap-6">
 							<div class="ml-auto lg:flex lg:justify-end lg:mt-0">
@@ -76,21 +88,8 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-import BaseQuestion from "@/components/ui/BaseQuestion.vue";
 
 export default {
-	props: {
-		question: {
-			type: Object,
-			required: true,
-		},
-		inlineStyles: {
-			type: String,
-			required: false,
-			default: "height: 600px; max-width: 1000px;",
-		},
-	},
-	components: { BaseQuestion },
 	setup() {
 		const store = useStore();
 		const currentSlideId = computed(() => store.getters["slides/currentSlideId"]);
@@ -120,6 +119,8 @@ export default {
 			else return false;
 		});
 
+		const inlineStyles = "height: 600px; max-width: 1000px;";
+
 		return {
 			currentSlideId,
 			slidesCount,
@@ -129,6 +130,7 @@ export default {
 			prevButtonVisibility,
 			submitButtonVisibility,
 			nextSlideAvailable,
+			inlineStyles,
 		};
 	},
 };
