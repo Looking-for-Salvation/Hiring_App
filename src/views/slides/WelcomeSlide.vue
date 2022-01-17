@@ -12,6 +12,8 @@
 										لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
 										ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
 									</p>
+									<button class="btn" @click="loadQuestions">Load Questions</button>
+									<button class="btn" @click="logQuestions">Log Questions</button>
 								</div>
 							</div>
 						</div>
@@ -121,6 +123,10 @@ export default {
 
 		const inlineStyles = "height: 600px; max-width: 1000px;";
 
+		const loadQuestions = () => store.dispatch("questions/loadQuestions");
+		const questions = computed(() => store.getters["questions/questions"]);
+		const logQuestions = () => console.log(questions);
+
 		return {
 			currentSlideId,
 			slidesCount,
@@ -131,6 +137,8 @@ export default {
 			submitButtonVisibility,
 			nextSlideAvailable,
 			inlineStyles,
+			loadQuestions,
+			logQuestions,
 		};
 	},
 };

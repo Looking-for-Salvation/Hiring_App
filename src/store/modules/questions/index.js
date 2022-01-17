@@ -30,11 +30,30 @@ export default {
 			],
 		};
 	},
-	mutations: {},
+	mutations: {
+		setQuestions(state, payload) {
+			state.questions = payload.questions;
+		},
+	},
 	getters: {
 		questions(state) {
 			return state.questions;
 		},
 	},
-	actions: {},
+	actions: {
+		loadQuestions({ commit }) {
+			fetch("http://127.0.0.1/api/questions")
+				.then((response) => {
+					console.log(response);
+					if (response.ok) return response.json();
+				})
+				.then((data) => {
+					commit("setQuestions", data);
+				})
+				.catch((error) => {
+					console.log(error);
+					console.log(error.response);
+				});
+		},
+	},
 };
