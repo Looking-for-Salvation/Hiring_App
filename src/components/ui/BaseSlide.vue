@@ -4,7 +4,7 @@
 			<section class="h-full p-0 lg:px-4">
 				<div class="flex flex-col justify-between h-full px-4">
 					<base-question :questionData="question"></base-question>
-					<div class="relative text-center">
+					<div class="relative pb-8 text-center md:pb-0">
 						<div class="flex items-center justify-center mt-10 lg:grid lg:grid-cols-3 lg:gap-6">
 							<div class="ml-auto lg:flex lg:justify-end lg:mt-0">
 								<button
