@@ -102,6 +102,7 @@ export default {
 					address: formData.address,
 					password: "password",
 					password_confirmation: "password",
+					birthdate: formData.birthDate,
 				})
 				.then((response) => {
 					if (response.statusText === "OK") {
@@ -112,7 +113,7 @@ export default {
 				})
 				.catch((error) => {
 					console.log(error);
-					console.log(error.response.data.errors);
+					console.log(error.response);
 				});
 		};
 
