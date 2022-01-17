@@ -104,7 +104,7 @@ export default {
 					password_confirmation: "password",
 				})
 				.then((response) => {
-					if (response.statusText === "ok") {
+					if (response.statusText === "OK") {
 						store.dispatch("slides/nextSlideAvailable");
 					} else {
 						throw new Error("Something went wrong!");
