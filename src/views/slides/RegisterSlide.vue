@@ -197,15 +197,15 @@ export default {
 				.post("http://127.0.0.1:8000/api/register", {
 					first_name: formData.firstName,
 					last_name: formData.lastName,
-					grade: formData.grade,
-					field_of_study: formData.field,
 					phone_number: formData.phone,
 					phone_number_backup: formData.phone,
 					email: formData.email,
+					grade: formData.grade,
+					field_of_study: formData.field,
+					birthdate: formData.birthDate,
 					address: formData.address,
 					password: "password",
 					password_confirmation: "password",
-					birthdate: formData.birthDate,
 				})
 				.then((response) => {
 					if (response.status === 201) {
