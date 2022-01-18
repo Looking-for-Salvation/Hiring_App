@@ -5,13 +5,13 @@
 				<div class="flex flex-col items-center max-w-xl mx-auto">
 					<h3 class="mb-16 text-lg text-center md:text-2xl">{{ questionData.title }}</h3>
 					<div v-if="isText">
-						<input v-if="questionData.characterLimit === 'short'" type="text" maxlength="30" class="w-full mb-4 input input-bordered" />
+						<input v-if="questionData.character_limit === 'short'" type="text" maxlength="30" class="w-full mb-4 input input-bordered" />
 						<textarea
-							v-if="questionData.characterLimit === 'medium'"
+							v-if="questionData.character_limit === 'medium'"
 							maxlength="200"
 							class="w-full mb-4 min-h-[120px] textarea textarea-bordered"
 						></textarea>
-						<textarea v-if="questionData.characterLimit === 'long'" class="w-full min-h-[160px] mb-4 textarea textarea-bordered"></textarea>
+						<textarea v-if="questionData.character_limit === 'long'" class="w-full min-h-[160px] mb-4 textarea textarea-bordered"></textarea>
 						<h6 class="w-full md:w-[85%] mx-auto text-sm text-black"><strong>راهنما:</strong> {{ questionData.description }}</h6>
 					</div>
 					<div v-if="isBoolean">
