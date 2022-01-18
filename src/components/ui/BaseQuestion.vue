@@ -60,7 +60,7 @@ export default {
 		});
 
 		const isHybrid = computed(() => {
-			if (props.questionData.type === "hybrid") return true;
+			if (props.questionData.type === "text_boolean") return true;
 			else return false;
 		});
 
