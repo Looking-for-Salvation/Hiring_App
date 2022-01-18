@@ -58,7 +58,7 @@ export default {
 	},
 	actions: {
 		loadQuestions({ commit }) {
-			fetch("http://127.0.0.1:3000/api/questions")
+			fetch("http://127.0.0.1:8000/api/questions")
 				.then((response) => {
 					console.log(response);
 					if (response.ok) return response.json();
